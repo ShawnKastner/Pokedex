@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Pokedex</title>
 
     <script src="script.js"></script>
     <link rel="stylesheet" href="style.css">
@@ -14,13 +14,40 @@
 
 <body onload="loadPokemon()">
 
-    <div id="pokedex">
+    <div class="allPokemonContainer" id="allPokemon">
+
+    </div>
+    <div class="displayCenter">
+        <button class="loadMoreBtn" onclick="loadPokemon()"><b>Load more</b></button>
+    </div>
+
+    <!-- <div id="pokedex">
         <h1 id="pokemonName">Name</h1>
     </div>
 
     <div class="infoContainer">
-        <img id="pokemonImg">
-    </div>
+        <div class="displayCenter"><img id="pokemonImg"></div>
+        <div>
+            <div class="aboutSection">
+                <div class="textCenter">
+                    <span onclick="about()"><b>About</b></span>
+                    <div id="aboutPokemon">
+
+                    </div>
+                </div>
+                <div class="textCenter">
+                    <span onclick="stats()"><b>Base Stats</b></span>
+                    <div id="stats">
+
+                    </div>
+                </div>
+                <div><span onclick="moves()"><b>Moves</b></span></div>
+            </div>
+            <div id="showStats">
+
+            </div>
+        </div>
+    </div> -->
 
 </body>
 
