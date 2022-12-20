@@ -1,6 +1,7 @@
 body {
     margin: 0;
     font-family: 'Open Sans', sans-serif;
+    background-color: black;
 }
 
 .card {
@@ -13,6 +14,7 @@ body {
     align-items: center;
     background-color: #7aff7e66;
     cursor: pointer;
+    position: relative;
 }
 
 #pokedex {
@@ -77,4 +79,11 @@ body {
     font-size: 30px;
     border-radius: 30px;
     cursor: pointer;
+    z-index: 999;
+}
+
+.nameIdAbsolute {
+    position: absolute;
+    bottom: 0;
+    left: 20px;
 }
