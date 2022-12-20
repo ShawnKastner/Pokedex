@@ -15,6 +15,11 @@ body {
     background-color: #7aff7e66;
     cursor: pointer;
     position: relative;
+    transition: 225ms ease-in-out;
+}
+
+.card:hover {
+    transform: scale(1.1);
 }
 
 #pokedex {

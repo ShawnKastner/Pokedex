@@ -30,19 +30,7 @@ function renderPokemon() {
         pokemonId = pokemon['id'];
         pokemonType = pokemon['types'][0]['type']['name'];
         colorOfPokemon(pokemonType);
-        content.innerHTML += /*html*/`
-        <div class="card" style="background-color:${pokemonColor};">
-            <div>
-                <h3  class="nameIdAbsolute">#${pokemonId}</h3>
-                <h2>${pokemonName}</h2>
-            </div>
-            <div class="typeContainer">
-                <span><b>${pokemonType}</b></span>
-            </div>
-            <div>
-                <img id="pokemonImg" src="${pokemonImg}">
-            </div>
-        </div>`;
+        content.innerHTML += renderPokemonTemplate(pokemonColor, pokemonId, pokemonName, pokemonType, pokemonImg);
     }
 }
 
@@ -101,4 +89,20 @@ function renderPokemonInfo(currentPokemon) {
 //     </table>
 //     `;
 // }
+
+function renderPokemonTemplate(pokemonColor, pokemonId, pokemonName, pokemonType, pokemonImg) {
+    return /*html*/`
+    <div class="card" style="background-color:${pokemonColor};">
+        <div>
+            <h3  class="nameIdAbsolute">#${pokemonId}</h3>
+            <h2>${pokemonName}</h2>
+        </div>
+        <div class="typeContainer">
+            <span><b>${pokemonType}</b></span>
+        </div>
+        <div>
+            <img id="pokemonImg" src="${pokemonImg}">
+        </div>
+    </div>`;
+}
 
