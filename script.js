@@ -36,8 +36,8 @@ function renderPokemon() {
                 <h3  class="nameIdAbsolute">#${pokemonId}</h3>
                 <h2>${pokemonName}</h2>
             </div>
-            <div>
-                <span>${pokemonType}</span>
+            <div class="typeContainer">
+                <span><b>${pokemonType}</b></span>
             </div>
             <div>
                 <img id="pokemonImg" src="${pokemonImg}">
