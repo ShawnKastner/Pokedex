@@ -30,22 +30,6 @@ body {
     padding: 24px;
 }
 
-.infoContainer {
-    background-color: white;
-    border-top-left-radius: 40px;
-    border-top-right-radius: 40px;
-    height: 100px;
-    margin-top: -40px;
-    position: relative;
-}
-
-.infoContainer img {
-    height: 400px;
-    object-fit: contain;
-    position: absolute;
-    bottom: 60px;
-}
-
 .aboutSection {
     display: flex;
     justify-content: space-evenly;
@@ -96,7 +80,56 @@ body {
 .typeContainer {
     border: 2px solid black;
     border-radius: 10px;
-    width: 60px; 
+    width: 60px;
     height: 20px;
     text-align: center;
+}
+
+.showPokemonBg {
+    background-color: rgba(0, 0, 0, 0.2);
+    z-index: 999;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dialog {
+    height: 80vh;
+    width: 60%;
+    border: 1px solid lightgrey;
+    border-radius: 10px;
+    padding: 24px;
+    color: black;
+    display: flex;
+    padding: 24px;
+    position: absolute;
+}
+
+.dNone {
+    display: none;
+}
+
+.infoContainer {
+    background-color: white;
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+    margin-top: -40px;
+    position: relative;
+    top: 188px;
+    width: 67%;
+    height: 40%;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.infoContainer img {
+    height: 400px;
+    object-fit: contain;
+    position: absolute;
+    bottom: 60px;
 }

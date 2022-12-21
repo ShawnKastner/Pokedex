@@ -30,15 +30,18 @@ function renderPokemon() {
         pokemonId = pokemon['id'];
         pokemonType = pokemon['types'][0]['type']['name'];
         colorOfPokemon(pokemonType);
-        content.innerHTML += renderPokemonTemplate(pokemonColor, pokemonId, pokemonName, pokemonType, pokemonImg);
+        content.innerHTML += renderPokemonTemplate(pokemonColor, pokemonId, pokemonName, pokemonType, pokemonImg, i);
     }
 }
 
-function renderPokemonInfo(currentPokemon) {
-    document.getElementById('pokemonName').innerHTML = currentPokemon['name'];
-    document.getElementById('pokemonImg').src = currentPokemon['sprites']['other']['home']['front_default'];
-    // document.getElementById('showStats').innerHTML = currentPokemon['stats'][0]['stat']['name'];
-    // aboutInfo(currentPokemon);
+function renderPokemonInfo(i) {
+    document.getElementById(`showPokemon`).classList.remove('dNone');
+    document.getElementById('info').classList.remove('dNone');
+    document.getElementById('body').style = 'overflow: hidden';
+    document.getElementById('pokemonName').innerHTML = allPokemon[i]['name'].charAt(0).toUpperCase() + allPokemon[i]['name'].slice(1);
+    colorOfPokemon(pokemonType);
+    document.getElementById('dialog').style = `background-color: ${pokemonColor}`;
+    // document.getElementById('dialogImg').src = allPokemon[i]['sprites']['other']['home']['front_default'];
 }
 
 // function aboutInfo(currentPokemon) {
@@ -90,9 +93,9 @@ function renderPokemonInfo(currentPokemon) {
 //     `;
 // }
 
-function renderPokemonTemplate(pokemonColor, pokemonId, pokemonName, pokemonType, pokemonImg) {
+function renderPokemonTemplate(pokemonColor, pokemonId, pokemonName, pokemonType, pokemonImg, i) {
     return /*html*/`
-    <div class="card" style="background-color:${pokemonColor};">
+    <div onclick="renderPokemonInfo(${i})" id="card${i}" class="card" style="background-color:${pokemonColor};">
         <div>
             <h3  class="nameIdAbsolute">#${pokemonId}</h3>
             <h2>${pokemonName}</h2>
