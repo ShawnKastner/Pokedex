@@ -29,16 +29,21 @@
     <div class="displayCenter">
         <button id="loadMoreBtn" class="loadMoreBtn" onclick="loadPokemon()"><b>Load more</b></button>
     </div>
-    
-    <div id="showPokemon" class="showPokemonBg dNone">
+
+    <div onclick="closePokemon()" id="showPokemon" class="showPokemonBg dNone">
         <div id="dialog" class="dialog">
+            <span><b id="dialogId"></b></span>
             <h1 id="pokemonName"></h1>
-            <span id="dialogId"></span>
+            <div class="typeContainer">
+                <span><b id="dialogType"></b></span>
+            </div>
         </div>
         <div id="info" class="infoContainer dNone">
-            <div class="displayCenter"><img id="dialogImg"></div>
-        <div>
-            <div class="aboutSection">
+            <div class="displayCenter" style="position: relative;">
+                <img id="dialogImg">
+            </div>
+            <div>
+                <!-- <div class="aboutSection">
                 <div class="textCenter">
                     <span onclick="about()"><b>About</b></span>
                     <div id="aboutPokemon">
@@ -52,37 +57,11 @@
                     </div>
                 </div>
                 <div><span onclick="moves()"><b>Moves</b></span></div>
+            </div> -->
             </div>
         </div>
     </div>
 
-    <!-- <div id="pokedex">
-        <h1 id="pokemonName">Name</h1>
-    </div>
-
-    <div id="pokemonInfo" class="infoContainer d-none">
-        <div class="displayCenter"><img id="pokemonImg"></div>
-        <div>
-            <div class="aboutSection">
-                <div class="textCenter">
-                    <span onclick="about()"><b>About</b></span>
-                    <div id="aboutPokemon">
-
-                    </div>
-                </div>
-                <div class="textCenter">
-                    <span onclick="stats()"><b>Base Stats</b></span>
-                    <div id="stats">
-
-                    </div>
-                </div>
-                <div><span onclick="moves()"><b>Moves</b></span></div>
-            </div>
-            <div id="showStats">
-
-            </div>
-        </div>
-    </div> -->
 
 </body>
 

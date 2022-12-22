@@ -30,7 +30,7 @@ function renderPokemon() {
         pokemonId = pokemon['id'];
         pokemonType = pokemon['types'][0]['type']['name'];
         colorOfPokemon(pokemonType);
-        content.innerHTML += renderPokemonTemplate(pokemonColor, pokemonId, pokemonName, pokemonType, pokemonImg, i);
+        content.innerHTML += renderPokemonTemplate(pokemonId, pokemonName, pokemonType, pokemonImg, i);
     }
 }
 
@@ -38,64 +38,18 @@ function renderPokemonInfo(i) {
     document.getElementById(`showPokemon`).classList.remove('dNone');
     document.getElementById('info').classList.remove('dNone');
     document.getElementById('body').style = 'overflow: hidden';
+    pokemonType = allPokemon[i]['types'][0]['type']['name'];
     document.getElementById('pokemonName').innerHTML = allPokemon[i]['name'].charAt(0).toUpperCase() + allPokemon[i]['name'].slice(1);
+    document.getElementById('dialogType').innerHTML = allPokemon[i]['types'][0]['type']['name'];
+    document.getElementById('dialogId').innerHTML = '#' + allPokemon[i]['id'];
     colorOfPokemon(pokemonType);
-    document.getElementById('dialog').style = `background-color: ${pokemonColor}`;
-    // document.getElementById('dialogImg').src = allPokemon[i]['sprites']['other']['home']['front_default'];
+    document.getElementById('dialog').style = `background-color:${pokemonColor};`;
+    document.getElementById('dialogImg').src = allPokemon[i]['sprites']['other']['home']['front_default'];
 }
 
-// function aboutInfo(currentPokemon) {
-//     document.getElementById('aboutPokemon').innerHTML += /*html*/`
-//     <table>
-//         <tr>
-//             <td>Height:</td>
-//             <td>${currentPokemon['height'] * 10 + 'cm'}</td>
-//         </tr>
-//         <tr>
-//             <td>Weight:</td>
-//             <td>${currentPokemon['weight'] + 'kg'}</td>
-//         </tr>
-//         <tr>
-//             <td>Abilities:</td>
-//             <td>${currentPokemon['abilities'][0]['ability']['name']},${currentPokemon['abilities'][1]['ability']['name']}</td>
-//         </tr>
-//     </table>`;
-// }
-
-// function statsOfPokemon(currentPokemon) {
-//     document.getElementById('stats').innerHTML += /*html*/ `
-//     <table>
-//         <tr>
-//             <td>${currentPokemon['stats'][0]['stat']['name']}:</td>
-//             <td>${currentPokemon['stats'][0]['base_stat']}</td>
-//         </tr>
-//         <tr>
-//             <td>${currentPokemon['stats'][1]['stat']['name']}:</td>
-//             <td>${currentPokemon['stats'][1]['base_stat']}</td>
-//         </tr>
-//         <tr>
-//             <td>${currentPokemon['stats'][2]['stat']['name']}:</td>
-//             <td>${currentPokemon['stats'][2]['base_stat']}</td>
-//         </tr>
-//         <tr>
-//             <td>${currentPokemon['stats'][3]['stat']['name']}:</td>
-//             <td>${currentPokemon['stats'][3]['base_stat']}</td>
-//         </tr>
-//         <tr>
-//             <td>${currentPokemon['stats'][4]['stat']['name']}:</td>
-//             <td>${currentPokemon['stats'][4]['base_stat']}</td>
-//         </tr>
-//         <tr>
-//             <td>${currentPokemon['stats'][5]['stat']['name']}:</td>
-//             <td>${currentPokemon['stats'][5]['base_stat']}</td>
-//         </tr>
-//     </table>
-//     `;
-// }
-
-function renderPokemonTemplate(pokemonColor, pokemonId, pokemonName, pokemonType, pokemonImg, i) {
+function renderPokemonTemplate(pokemonId, pokemonName, pokemonType, pokemonImg, i) {
     return /*html*/`
-    <div onclick="renderPokemonInfo(${i})" id="card${i}" class="card" style="background-color:${pokemonColor};">
+    <div onclick="renderPokemonInfo(${i})" class="card" style="background-color:${pokemonColor};">
         <div>
             <h3  class="nameIdAbsolute">#${pokemonId}</h3>
             <h2>${pokemonName}</h2>
