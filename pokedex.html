@@ -31,33 +31,28 @@
     </div>
 
     <div onclick="closePokemon()" id="showPokemon" class="showPokemonBg dNone">
-        <div id="dialog" class="dialog">
+        <div onclick="doNotClose(event)" id="dialog" class="dialog">
             <span><b id="dialogId"></b></span>
             <h1 id="pokemonName"></h1>
-            <div class="typeContainer">
-                <span><b id="dialogType"></b></span>
+            <div class="aboutContainer columnBetween">
+                <div class="typeContainer">
+                    <span><b id="dialogType"></b></span>
+                </div>
+                <div class="typeContainer">
+                    <span><b id="height"></b></span>
+                </div>
+                <div class="typeContainer">
+                    <span><b id="weight"></b></span>
+                </div>
             </div>
         </div>
-        <div id="info" class="infoContainer dNone">
+        <div onclick="doNotClose(event)" id="info" class="infoContainer dNone">
             <div class="displayCenter" style="position: relative;">
                 <img id="dialogImg">
             </div>
-            <div>
-                <!-- <div class="aboutSection">
-                <div class="textCenter">
-                    <span onclick="about()"><b>About</b></span>
-                    <div id="aboutPokemon">
-
-                    </div>
-                </div>
-                <div class="textCenter">
-                    <span onclick="stats()"><b>Base Stats</b></span>
-                    <div id="stats">
-
-                    </div>
-                </div>
-                <div><span onclick="moves()"><b>Moves</b></span></div>
-            </div> -->
+            <div class="baseStats">
+                <span><b>Base stats</b></span>
+                <div class="statContainer" id="stats"></div>
             </div>
         </div>
     </div>

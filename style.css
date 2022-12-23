@@ -22,14 +22,16 @@ body {
     transform: scale(1.1);
 }
 
-.aboutSection {
+.baseStats {
     display: flex;
-    justify-content: space-evenly;
-    padding-top: 50px;
+    flex-direction: column;
+    padding-top: 15px;
 }
 
-.aboutSection span:hover {
-    cursor: pointer;
+.baseStats span {
+    font-size: 35px;
+    display: flex;
+    justify-content: center;
 }
 
 .displayCenter {
@@ -93,7 +95,7 @@ body {
 .dialog {
     height: 40vh;
     width: 60%;
-    border-radius: 10px;
+    border-radius: 30px;
     padding: 24px;
     color: black;
     display: flex;
@@ -126,4 +128,41 @@ body {
     object-fit: contain;
     position: absolute;
     bottom: -20px;
+}
+
+.aboutContainer {
+    height: 80px;
+}
+
+.columnBetween {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.statContainer {
+    padding-top: 80px;
+}
+
+table td {
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+
+progress[value] {
+    /* Reset the default appearance */
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+progress[value]::-webkit-progress-bar {
+    background-color: lightgrey;
+    border-radius: 20px;
+    width: 400px;
+
+}
+
+progress[value]::-webkit-progress-value {
+    border-radius: 20px;
+    background-color: rgb(202, 1, 1);
 }
