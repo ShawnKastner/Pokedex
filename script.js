@@ -61,7 +61,36 @@ function updateProgressBar() {
 }
 
 function renderStats(i) {
-    document.getElementById('stats').innerHTML = /*html*/`
+    document.getElementById('stats').innerHTML = renderStatsTemplate(i);
+}
+
+function closePokemon() {
+    document.getElementById('showPokemon').classList.add('dNone');
+    document.getElementById('body').style = '';
+}
+
+function doNotClose(event) {
+    event.stopPropagation();
+}
+
+function renderPokemonTemplate(pokemonId, pokemonName, pokemonType, pokemonImg, i) {
+    return /*html*/`
+    <div onclick="renderPokemonInfo(${i})" class="card" style="background-color:${pokemonColor};">
+        <div>
+            <h3  class="nameIdAbsolute">#${pokemonId}</h3>
+            <h2>${pokemonName}</h2>
+        </div>
+        <div class="typeContainer">
+            <span><b>${pokemonType}</b></span>
+        </div>
+        <div>
+            <img id="pokemonImg" src="${pokemonImg}">
+        </div>
+    </div>`;
+}
+
+function renderStatsTemplate(i) {
+    return /*html*/`
     <table>
         <tr>
             <td><b>${allPokemon[i]['stats'][0]['stat']['name']}:</b></td>
@@ -93,32 +122,6 @@ function renderStats(i) {
             <td><b>${allPokemon[i]['stats'][5]['base_stat']}</b></td>
             <td><progress value="${allPokemon[i]['stats'][5]['base_stat']}" max="100" class="bar"></progress></td>
         </tr>
-    </table>
-    `;
-}
-
-function closePokemon() {
-    document.getElementById('showPokemon').classList.add('dNone');
-    document.getElementById('body').style = '';
-}
-
-function doNotClose(event) {
-    event.stopPropagation();
-}
-
-function renderPokemonTemplate(pokemonId, pokemonName, pokemonType, pokemonImg, i) {
-    return /*html*/`
-    <div onclick="renderPokemonInfo(${i})" class="card" style="background-color:${pokemonColor};">
-        <div>
-            <h3  class="nameIdAbsolute">#${pokemonId}</h3>
-            <h2>${pokemonName}</h2>
-        </div>
-        <div class="typeContainer">
-            <span><b>${pokemonType}</b></span>
-        </div>
-        <div>
-            <img id="pokemonImg" src="${pokemonImg}">
-        </div>
-    </div>`;
+    </table>`;
 }
 
