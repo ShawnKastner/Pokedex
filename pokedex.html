@@ -37,7 +37,13 @@
 
     <div onclick="closePokemon()" id="showPokemon" class="showPokemonBg dNone">
         <div onclick="doNotClose(event)" id="dialog" class="dialog">
-            <span><b id="dialogId"></b></span>
+            <div style="display: flex; justify-content: space-between;">
+                <span><b id="dialogId"></b>
+                </span>
+                <div>
+                    <img onclick="closePokemon()" style="height: 15px; cursor: pointer;" src="icon/x-mark-64.ico">
+                </div>
+            </div>
             <h1 id="pokemonName"></h1>
             <div class="aboutContainer columnBetween">
                 <div class="typeContainer">
