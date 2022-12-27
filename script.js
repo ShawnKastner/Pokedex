@@ -6,7 +6,6 @@ let pokemonType;
 let allPokemon = [];
 let start = 1;
 let limit = 21;
-let bars = ['hp', 'attack', 'defense', 'special-attack', 'special-defense', 'speed']
 
 async function loadPokemon() {
     for (let i = start; i < limit; i++) {
@@ -71,6 +70,26 @@ function closePokemon() {
 
 function doNotClose(event) {
     event.stopPropagation();
+}
+
+function searchPokemon() {
+    let search = document.getElementById('searchPokemon').value;
+    search = search.toLowerCase();
+
+    let content = document.getElementById('allPokemon');
+    content.innerHTML = '';
+    for (let i = 0; i < allPokemon.length; i++) {
+        let name = allPokemon[i]['name'];
+        pokemonName = allPokemon[i]['name'].charAt(0).toUpperCase() + allPokemon[i]['name'].slice(1);
+        pokemonType = allPokemon[i]['types'][0]['type']['name'];
+        pokemonId = allPokemon[i]['id'];
+        pokemonImg = allPokemon[i]['sprites']['other']['home']['front_default'];
+        colorOfPokemon(pokemonType);
+        if (name.toLowerCase().includes(search)) {
+            currentPokemon = allPokemon[i];
+            content.innerHTML += renderPokemonTemplate(pokemonId, pokemonName, pokemonType, pokemonImg, i);
+        }
+    }
 }
 
 function renderPokemonTemplate(pokemonId, pokemonName, pokemonType, pokemonImg, i) {
