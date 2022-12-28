@@ -4,6 +4,7 @@
             width: 300px;
         }
     }
+
     @media(max-width: 750px) {
         progress[value]::-webkit-progress-bar {
             width: 200px;
@@ -45,6 +46,20 @@
 
         .card {
             width: 80%;
+        }
+
+        .dialog {
+            width: 90%;
+            top: 0;
+            height: 50vh;
+        }
+
+        .infoContainer {
+            width: 90%;
+            margin-top: unset;
+            position: absolute;
+            top: 230px;
+            height: 100%;
         }
     }
 
