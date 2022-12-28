@@ -19,6 +19,12 @@ async function loadPokemon() {
     renderPokemon();
 }
 
+window.addEventListener('scroll', function () {
+    if (window.scrollY + window.innerHeight >= document.documentElement.scrollHeight) {
+        loadPokemon();  
+    }
+})
+
 function renderPokemon() {
     let content = document.getElementById('allPokemon');
     content.innerHTML = '';
