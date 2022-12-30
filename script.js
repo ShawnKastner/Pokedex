@@ -35,7 +35,6 @@ function renderPokemon() {
         pokemonImg = pokemon['sprites']['other']['home']['front_default'];
         pokemonId = pokemon['id'];
         pokemonType = pokemon['types'][0]['type']['name'];
-        colorOfPokemon(pokemonType);
         content.innerHTML += renderPokemonTemplate(pokemonId, pokemonName, pokemonType, pokemonImg, i);
     }
 }
@@ -50,8 +49,7 @@ function renderPokemonInfo(i) {
     document.getElementById('height').innerHTML = allPokemon[i]['height'] * 10 + 'cm';
     document.getElementById('weight').innerHTML = allPokemon[i]['weight'] + 'kg';
     document.getElementById('dialogId').innerHTML = '#' + allPokemon[i]['id'];
-    colorOfPokemon(pokemonType);
-    document.getElementById('dialog').style = `background-color:${pokemonColor};`;
+    document.getElementById('dialog').classList.add(pokemonType);
     document.getElementById('dialogImg').src = allPokemon[i]['sprites']['other']['home']['front_default'];
     renderStats(i);
 }
@@ -72,6 +70,7 @@ function renderStats(i) {
 function closePokemon() {
     document.getElementById('showPokemon').classList.add('dNone');
     document.getElementById('body').style = '';
+    document.getElementById('dialog').classList.remove(pokemonType);
 }
 
 function doNotClose(event) {
@@ -86,11 +85,7 @@ function searchPokemon() {
     content.innerHTML = '';
     for (let i = 0; i < allPokemon.length; i++) {
         let name = allPokemon[i]['name'];
-        pokemonName = allPokemon[i]['name'].charAt(0).toUpperCase() + allPokemon[i]['name'].slice(1);
-        pokemonType = allPokemon[i]['types'][0]['type']['name'];
-        pokemonId = allPokemon[i]['id'];
-        pokemonImg = allPokemon[i]['sprites']['other']['home']['front_default'];
-        colorOfPokemon(pokemonType);
+        searchPokemonTemplate();
         if (name.toLowerCase().includes(search)) {
             currentPokemon = allPokemon[i];
             content.innerHTML += renderPokemonTemplate(pokemonId, pokemonName, pokemonType, pokemonImg, i);
@@ -100,7 +95,7 @@ function searchPokemon() {
 
 function renderPokemonTemplate(pokemonId, pokemonName, pokemonType, pokemonImg, i) {
     return /*html*/`
-    <div onclick="renderPokemonInfo(${i})" class="card" style="background-color:${pokemonColor};">
+    <div onclick="renderPokemonInfo(${i})" class="card ${pokemonType}">
         <div>
             <h3  class="nameIdAbsolute">#${pokemonId}</h3>
             <h2>${pokemonName}</h2>
@@ -148,5 +143,12 @@ function renderStatsTemplate(i) {
             <td><progress value="${allPokemon[i]['stats'][5]['base_stat']}" max="100" class="bar"></progress></td>
         </tr>
     </table>`;
+}
+
+function searchPokemonTemplate() {
+    pokemonName = allPokemon[i]['name'].charAt(0).toUpperCase() + allPokemon[i]['name'].slice(1);
+    pokemonType = allPokemon[i]['types'][0]['type']['name'];
+    pokemonId = allPokemon[i]['id'];
+    pokemonImg = allPokemon[i]['sprites']['other']['home']['front_default'];
 }
 
