@@ -17,11 +17,16 @@
 
 </head>
 
-<body id="body" onload="loadPokemon()">
+<body id="body" onload="loaded()">
     <header>
         <h1 class="shimmer">Mein Pokedex</h1>
-        <input type="text" id="searchPokemon" onkeyup="searchPokemon()" placeholder="Search">
+        <input class="dNone" type="text" id="searchPokemon" onkeyup="searchPokemon()" placeholder="Search">
     </header>
+
+    <div id="loader" class="loaderWrapper">
+        <!-- <img class="loadingImg" src="icon/pokemonLoading.jpg"> -->
+        <span class="loader"><span class="loaderInner"></span></span>
+    </div>
 
     <div id="bgAnimation" class="bgAnimation">
         <div id="stars"></div>
@@ -30,7 +35,7 @@
         <div id="stars4"></div>
     </div>
 
-    <div class="allPokemonContainer" id="allPokemon">
+    <div style="display: none;" class="allPokemonContainer" id="allPokemon">
 
     </div>
 

@@ -1,4 +1,10 @@
 @media screen {
+    @media(max-width: 1700px) {
+        progress[value]::-webkit-progress-bar {
+            width: 800px;
+        }
+    }
+
     @media(max-width: 1600px) {
         progress[value]::-webkit-progress-bar {
             width: 700px;

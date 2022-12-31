@@ -6,6 +6,18 @@ let pokemonType;
 let allPokemon = [];
 let start = 1;
 let limit = 21;
+let load;
+
+function loaded() {
+    load = setTimeout(showPage, 2000);
+}
+
+function showPage() {
+    document.getElementById('loader').style.display = 'none';
+    document.getElementById('searchPokemon').classList.remove('dNone');
+    document.getElementById('allPokemon').style.display = 'flex';
+    loadPokemon();
+}
 
 async function loadPokemon() {
     for (let i = start; i < limit; i++) {
