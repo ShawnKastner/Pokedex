@@ -1,5 +1,53 @@
 @media screen {
+    @media(max-width: 1600px) {
+        progress[value]::-webkit-progress-bar {
+            width: 700px;
+        }
+    }
+
+    @media(max-width: 1450px) {
+        progress[value]::-webkit-progress-bar {
+            width: 650px;
+        }
+    }
+
+    @media(max-width: 1400px) {
+        progress[value]::-webkit-progress-bar {
+            width: 600px;
+        }
+    }
+
+    @media(max-width: 1250px) {
+        progress[value]::-webkit-progress-bar {
+            width: 550px;
+        }
+    }
+
+    @media(max-width: 1200px) {
+        progress[value]::-webkit-progress-bar {
+            width: 500px;
+        }
+    }
+
+    @media(max-width: 1100px) {
+        progress[value]::-webkit-progress-bar {
+            width: 450px;
+        }
+    }
+
+    @media(max-width: 1000px) {
+        progress[value]::-webkit-progress-bar {
+            width: 400px;
+        }
+    }
+
     @media(max-width: 900px) {
+        progress[value]::-webkit-progress-bar {
+            width: 350px;
+        }
+    }
+
+    @media(max-width: 850px) {
         progress[value]::-webkit-progress-bar {
             width: 300px;
         }
@@ -7,7 +55,7 @@
 
     @media(max-width: 750px) {
         progress[value]::-webkit-progress-bar {
-            width: 200px;
+            width: 250px;
         }
     }
 
@@ -21,6 +69,12 @@
         }
     }
 
+    @media(max-width: 650px) {
+        progress[value]::-webkit-progress-bar {
+            width: 200px;
+        }
+    }
+
     @media(max-width: 600px) {
         header {
             font-size: 10px;
@@ -31,7 +85,7 @@
         }
 
         progress[value]::-webkit-progress-bar {
-            width: 150px;
+            width: 170px;
         }
     }
 
@@ -61,11 +115,27 @@
             top: 230px;
             height: 100%;
         }
+
+        progress[value]::-webkit-progress-bar {
+            width: 250px;
+        }
+    }
+
+    @media(max-width: 450px) {
+        progress[value]::-webkit-progress-bar {
+            width: 230px;
+        }
+    }
+
+    @media(max-width: 420px) {
+        progress[value]::-webkit-progress-bar {
+            width: 190px;
+        }
     }
 
     @media(max-width: 380px) {
         progress[value]::-webkit-progress-bar {
-            width: 100px;
+            width: 160px;
         }
     }
 }

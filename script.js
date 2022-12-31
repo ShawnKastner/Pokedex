@@ -85,7 +85,7 @@ function searchPokemon() {
     content.innerHTML = '';
     for (let i = 0; i < allPokemon.length; i++) {
         let name = allPokemon[i]['name'];
-        searchPokemonTemplate();
+        searchPokemonTemplate(i);
         if (name.toLowerCase().includes(search)) {
             currentPokemon = allPokemon[i];
             content.innerHTML += renderPokemonTemplate(pokemonId, pokemonName, pokemonType, pokemonImg, i);
@@ -145,7 +145,7 @@ function renderStatsTemplate(i) {
     </table>`;
 }
 
-function searchPokemonTemplate() {
+function searchPokemonTemplate(i) {
     pokemonName = allPokemon[i]['name'].charAt(0).toUpperCase() + allPokemon[i]['name'].slice(1);
     pokemonType = allPokemon[i]['types'][0]['type']['name'];
     pokemonId = allPokemon[i]['id'];
