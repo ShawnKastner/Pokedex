@@ -9,7 +9,7 @@ let limit = 31;
 let load;
 
 function loaded() {
-    load = setTimeout(showPage, 2000);
+    load = setTimeout(showPage, 3000);
 }
 
 function showPage() {
