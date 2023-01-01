@@ -5,7 +5,7 @@ let pokemonId;
 let pokemonType;
 let allPokemon = [];
 let start = 1;
-let limit = 21;
+let limit = 31;
 let load;
 
 function loaded() {
