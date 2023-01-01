@@ -73,6 +73,10 @@
         input {
             width: 30%;
         }
+     
+        .infoContainer img {
+            height: 200px;
+        }
     }
 
     @media(max-width: 650px) {
@@ -120,6 +124,10 @@
             position: absolute;
             top: 230px;
             height: 100%;
+        }
+
+        .infoContainer img {
+            height: 170px;
         }
 
         progress[value]::-webkit-progress-bar {
